@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynav"
+    app:startDestination="@id/fragmentListado">
+
+    <fragment
+        android:id="@+id/fragmentGato"
+        android:name="com.example.apicat.ui.fragments.FragmentGato"
+        android:label="Gato individual" />
+    <fragment
+        android:id="@+id/fragmentListado"
+        android:name="com.example.apicat.ui.fragments.FragmentListado"
+        android:label="Listado de Razas"
+        tools:layout="@layout/fragment_listado">
+        <action
+            android:id="@+id/action_fragmentListado2_to_fragmentGato"
+            app:destination="@id/fragmentGato" />
+        <action
+            android:id="@+id/action_fragmentListado_to_fragmentVotosListado"
+            app:destination="@id/fragmentVotosListado" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentVotosListado"
+        android:name="com.example.apicat.ui.fragments.FragmentVotosListado"
+        android:label="Tus votos"
+        tools:layout="@layout/fragment_votos_listado" />
+</navigation>
